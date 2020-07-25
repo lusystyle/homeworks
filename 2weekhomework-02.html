@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <title>원페이지쇼핑몰</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Nanum Brush Script', cursive;
+        }
+        .myitem {
+            width: 500px;
+            height: 300px;
+
+            background-image: url("https://t1.daumcdn.net/cfile/blog/2358533C520A91D72A");
+            background-position: center;
+            background-size: cover;
+
+
+        }
+        .price {
+            font-size: 16px;
+        }
+
+        .desc {
+            width: 500px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+        }
+        .order-box {
+            width: 500px;
+        }
+        .mybtn {
+            width: 100px;
+            margin: auto;
+            display: block;
+        }
+        .wrap {
+            margin: auto;
+            width: 500px;
+        }
+
+
+
+
+    </style>
+    <script>
+        function order() {
+            let name = $('#order-name').val();
+            let address = $('#order-address').val();
+            let phone = $('#order-phone').val();
+            let count = $('#order-count').val();
+
+            if (name==''){
+                alert('이름을 입력하세요');
+                return;
+            } else if(address==''){
+                alert('주소를 입력하세요');
+                 return;
+            } else if(phone==''){
+                alert('전화번호를 입력하세요');
+                 return;
+            } else if(count=='--수량을 선택하세요--') {
+                alert('수량을 선택하세요');
+                return;
+            }
+               //    return을  활용하면 else를 사용하지 않아도 된다
+                alert('주문이 완료 되었습니다');
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+<div class="wrap">
+<div class="myitem"></div>
+<div class="desc">
+    <h1>신비의명약. <span class="price">가격: 1,000,000원/개</span></h1>
+    <p>이 약으로 말할거 같으면 백두산 호랑이의 기운을 받아 한번 복용하면 120년을 살수 있다는 바로 그 명약입니다. </p>
+</div>
+<div class="order-box">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">주문자이름</span>
+        </div>
+        <input id="order-name" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">주소</span>
+        </div>
+        <input id="order-address" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">전화번호</span>
+        </div>
+        <input id="order-phone" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">수량</label>
+        </div>
+        <select class="custom-select" id="order-count">
+            <option selected>--수량을 선택하세요--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    <button onclick="order()" type="button" class="btn btn-light mybtn">주문하기</button>
+</div>
+</div>
+</body>
+
+</html>
